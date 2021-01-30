@@ -23,11 +23,16 @@ body {
 }
 
 .nav ul {
-  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav li {
-  display: inline;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav a {
@@ -37,7 +42,21 @@ body {
   text-decoration: none;
 }
 
+.btn-cart {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  /* justify-content: flex-end; */
+}
+
+.btn-cart i {
+  color: #fff;
+}
+
 .main-nav {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
   font-size: 1.1em;
   font-weight: lighter;
@@ -82,6 +101,7 @@ body {
   margin: 0 auto;
   padding: 0 1.5em;
 }
+
 .section-header {
   font-family: 'Metal Mania';
   font-weight: normal;
@@ -112,6 +132,8 @@ body {
 .main-footer-container ul {
   flex-grow: 1;
   text-align: end;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-nav li {
@@ -238,6 +260,44 @@ body {
   justify-content: space-around;
 }
 
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+}
+
+.cart.showcart {
+  width: 40%;
+}
+
+.cart.hidecart {
+  width: 0;
+}
+
+.cart .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  border: 0;
+  background-color: transparent;
+}
+
+.cart .close:focus {
+  outline: none;
+}
+
 .cart-header {
   font-weight: bold;
   font-size: 1.25em;
@@ -249,8 +309,8 @@ body {
   align-items: center;
   border-bottom: 1px solid black;
   margin-right: 1.5em;
-  padding-bottom: 10px;
-  margin-top: 10px;
+  padding-bottom: 0.5em;
+  margin-top: 1.5em;
 }
 
 .cart-row {
@@ -318,7 +378,7 @@ body {
 
 .cart-total {
   text-align: end;
-  margin-top: 10px;
+  margin-top: 50px;
   margin-right: 10px;
 }
 
@@ -338,4 +398,68 @@ body {
   display: block;
   margin: 40px auto 80px auto;
   font-size: 1.75em;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 95vw;
+  }
+
+  .tour-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tour-city {
+    margin-left: 1em;
+  }
+
+  .tour-arena {
+    margin-left: 1em;
+  }
+
+  .main-nav li {
+    padding: 0 2%;
+  }
+
+  .main-header {
+    padding: 0.3rem 0;
+  }
+
+  .btn-cart {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  .cart .close {
+    top: 5px;
+    right: 5px;
+    font-size: 1.5rem;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .cart.showcart {
+    width: 100vw;
+  }
+
+  .cart .section-header {
+    font-size: 1.5em;
+  }
+
+  .cart-column {
+    margin-right: 1em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .band-name {
+    font-size: 3em;
+  }
+
+  .btn-purchase {
+    margin: 30px auto 30px auto;
+    font-size: 1.25em;
+  }
 }

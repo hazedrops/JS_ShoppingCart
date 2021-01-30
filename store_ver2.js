@@ -1,16 +1,8 @@
-const body = document.body
 const addToCartButtons = document.querySelectorAll('.shop-item-button')
 const removeCartItemButtons = document.querySelectorAll('.btn-danger')
 const quantityInputs = document.querySelectorAll('.cart-quantity-input')
 const cartTotalPrice = document.querySelector('.cart-total-price')
 const purchaseButton = document.querySelector('.btn-purchase')
-const cartButton = document.querySelector('.btn-cart')
-const cart = document.querySelector('.cart')
-const closeButton = document.querySelector('.close')
-
-cartButton.addEventListener('click', showCart)
-
-closeButton.addEventListener('click', hideCart)
 
 removeCartItemButtons.forEach(button => {
   button.addEventListener('click', removeCartItem)
@@ -25,16 +17,6 @@ addToCartButtons.forEach(button => {
 })
 
 purchaseButton.addEventListener('click', purchaseClicked)
-
-function showCart() {  
-  cart.classList.remove('hidecart')
-  cart.classList.add('showcart')
-}
-
-function hideCart() {
-  cart.classList.remove('showcart')
-  cart.classList.add('hidecart')
-}
 
 function removeCartItem(event) {
   const buttonClicked = event.target
@@ -59,8 +41,6 @@ function addToCartClicked(event) {
   
   addItemToCart(title, price, imageSrc)
   updateCartTotal()
-  showCart()
-  setTimeout(hideCart, 3000);
 }
 
 function purchaseClicked() {
